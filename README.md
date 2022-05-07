@@ -1,4 +1,4 @@
-# School project to Twiter using web 3.
+# School project to Twitter using web 3.
 
 Course available in Youtube:
 
