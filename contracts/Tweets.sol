@@ -1,7 +1,15 @@
 // SPDX-License-Identifier: GPL-3.0
+// by Marcelo Briones
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Tweets {
+    struct Tweet {
+        address tweeter;
+        uint256 id;
+        string tweetText;
+        string tweetImage;
+    }
+    
     address public owner;
     uint256 private counter;
 
@@ -10,12 +18,7 @@ contract Tweets {
         counter = 0;
     }
 
-    struct Tweet {
-        address tweeter;
-        uint256 id;
-        string tweetText;
-        string tweetImage;
-    }
+   
 
     event TweetCreated(
         address tweeter,
