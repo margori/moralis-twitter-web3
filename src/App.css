@@ -67,12 +67,3 @@ a:-webkit-any-link {
   font-weight: bold;
   cursor: pointer;
 }
-
-.loginPage {
-  height: 100vh;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-}

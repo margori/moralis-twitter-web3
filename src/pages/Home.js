@@ -63,35 +63,12 @@ const Home = () => {
     await contractProcessor.fetch({
       params: options,
       onSuccess: () => {
-        saveTweet();
+        console.log('maticTweet success');
       },
       onError: (error) => {
         console.log(error.data.message);
       },
     });
-  }
-
-  async function saveTweet() {
-    if (!tweet) return;
-
-    const Tweets = Moralis.Object.extend('Tweets');
-
-    const newTweet = new Tweets();
-
-    newTweet.set('tweetTxt', tweet);
-    newTweet.set('tweeterPfp', user.attributes.pfp);
-    newTweet.set('tweeterAcc', user.attributes.ethAddress);
-    newTweet.set('tweeterUserName', user.attributes.username);
-
-    if (theFile) {
-      const data = theFile;
-      const file = new Moralis.File(data.name, data);
-      await file.saveIPFS();
-      newTweet.set('tweetImg', file.ipfs());
-    }
-
-    await newTweet.save();
-    window.location.reload();
   }
 
   const onImageClick = () => {
@@ -137,14 +114,12 @@ const Home = () => {
                 <Icon fill="#1DA1F2" size={20} svg="image"></Icon>
               </div>
               <div className="tweetOptions">
-                <div className="tweet" onClick={saveTweet}>
-                  Tweet
-                </div>
                 <div
                   className="tweet"
                   onClick={maticTweet}
                   style={{ backgroundColor: '#8247e5' }}
                 >
+                  Tweet
                   <Icon fill="#ffffff" size={20} svg="matic" />
                 </div>
               </div>

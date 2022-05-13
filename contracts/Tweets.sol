@@ -1,24 +1,21 @@
 // SPDX-License-Identifier: GPL-3.0
-// by Marcelo Briones
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Tweets {
-    struct Tweet {
-        address tweeter;
-        uint256 id;
-        string tweetText;
-        string tweetImage;
-    }
-    
     address public owner;
-    uint256 private counter;
+    uint256 public counter;
 
     constructor() {
         owner = msg.sender;
         counter = 0;
     }
 
-   
+    struct Tweet {
+        address tweeter;
+        uint256 id;
+        string tweetText;
+        string tweetImage;
+    }
 
     event TweetCreated(
         address tweeter,
@@ -33,10 +30,9 @@ contract Tweets {
         public
         payable
     {
-        require(msg.value == (0.01 ether), "Please submit 1 Matic");
+        require(msg.value == (0.01 ether), "Please submit 0.01 Matic");
 
         Tweet storage newTweet = tweets[counter];
-
         newTweet.tweeter = msg.sender;
         newTweet.tweetText = _tweetText;
         newTweet.tweetImage = _tweetImage;
@@ -58,7 +54,7 @@ contract Tweets {
             address
         )
     {
-        require(id < counter, "No such Tweet");
+        require(id <= counter, "No such Tweet");
         Tweet storage tweet = tweets[id];
         return (tweet.tweetText, tweet.tweetImage, tweet.tweeter);
     }

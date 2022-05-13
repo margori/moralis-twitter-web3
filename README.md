@@ -16,3 +16,18 @@ Course available in Youtube:
 ### Tweets
 
 1.  0xbfccfc9cab4dafb87e7702c4b7eeb0d01fceca41ef1043089f5d91053afb2054
+
+---
+
+New Contract
+
+| Item     | Address                                                                                                                         |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Contract | [0xbE8E59CBB0CbA3dD177AAe5f14d19Bcad9998c39](https://mumbai.polygonscan.com/address/0xbE8E59CBB0CbA3dD177AAe5f14d19Bcad9998c39) |
+| Tx       | 0x557f6f3d6b5387efa1196a7a62b2aff0c87475ee8fb5b9263ba5a202fce6e3a9                                                              |
+| Block    | 26243896                                                                                                                        |
+| Owner    | 0xaB66e2b4A069F19520A20261054e5B00E6E4206C                                                                                      |
+
+Tx
+
+0xab6e6ba0cb1bd3a9953ca167ef8aef35c8801cf1310c0fbf19e41dd99d8bd204
